@@ -1,0 +1,59 @@
+.urg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  color: #fff;
+}
+.urg-badge svg { font-size: 0.85rem; }
+
+.urg--max { background: var(--danger); }        /* red   — Urgence Maximale */
+.urg--medium { background: var(--orange-500); }  /* orange — Priorité Moyenne */
+.urg--low { background: var(--success); }        /* green  — Priorité Faible */
+.urg--normal { background: var(--info); }        /* blue   — Trouvé (found) */
+.urg--high { background: var(--orange-500); }    /* legacy alias → orange */
+
+/* ---- Hover tooltip (feed + details) ---- */
+.urg-badge--tip { position: relative; cursor: help; }
+.urg-tip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 30;
+  width: max-content;
+  max-width: 240px;
+  background: var(--navy-900);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: left;
+  padding: 8px 11px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+  white-space: normal;
+}
+.urg-tip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 14px;
+  border: 6px solid transparent;
+  border-bottom-color: var(--navy-900);
+}
+.urg-badge--tip:hover .urg-tip,
+.urg-badge--tip:focus-visible .urg-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

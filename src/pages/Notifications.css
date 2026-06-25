@@ -1,0 +1,80 @@
+.notifs { max-width: 760px; }
+
+.notifs__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.notifs__head h1 { margin-bottom: 4px; }
+
+.notifs__tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.notifs__tab-count {
+  margin-left: 6px;
+  background: var(--orange-500);
+  color: #fff;
+  font-size: 0.66rem;
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+}
+.chip.is-active .notifs__tab-count { background: rgba(255, 255, 255, 0.25); }
+
+.notifs__list { overflow: hidden; }
+.notif {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  position: relative;
+  transition: background var(--transition);
+}
+.notif + .notif { border-top: 1px solid var(--border); }
+.notif:hover { background: var(--gray-50); }
+.notif.is-unread { background: rgba(240, 122, 38, 0.05); }
+
+.notif__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.notif__icon--info { background: var(--info-bg); color: var(--info); }
+.notif__icon--success { background: var(--success-bg); color: var(--success); }
+.notif__icon--danger { background: var(--danger-bg); color: var(--danger); }
+.notif__icon--warning { background: var(--warning-bg); color: var(--warning); }
+.notif__icon--navy { background: var(--gray-100); color: var(--navy-700); }
+.notif__avatar { width: 44px; height: 44px; flex-shrink: 0; }
+
+.notif__body { flex: 1; min-width: 0; }
+.notif__body strong { font-size: 0.94rem; color: var(--navy-800); }
+.notif__body p { font-size: 0.86rem; color: var(--gray-600); margin: 3px 0 5px; line-height: 1.5; }
+.notif__time { font-size: 0.74rem; color: var(--gray-400); }
+
+.notif__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange-500);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.notifs__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 60px 20px;
+  text-align: center;
+}
+.notifs__empty svg { font-size: 2.4rem; color: var(--gray-300); }
+.notifs__empty h3 { font-size: 1.1rem; }
+
+@media (max-width: 520px) {
+  .notifs__head { flex-direction: column; }
+}
