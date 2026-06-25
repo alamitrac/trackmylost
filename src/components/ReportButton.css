@@ -1,0 +1,51 @@
+.reportbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: var(--gray-100);
+  color: var(--gray-600);
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 8px 13px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+.reportbtn:hover { background: var(--danger-bg); color: var(--danger); }
+
+.report-modal { display: flex; flex-direction: column; gap: 8px; }
+.report-modal__reasons { display: flex; flex-direction: column; gap: 8px; margin-bottom: 6px; }
+.report-modal__reason {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: border-color var(--transition), background var(--transition);
+}
+.report-modal__reason:hover { border-color: var(--navy-500); }
+.report-modal__reason.is-active { border-color: var(--danger); background: var(--danger-bg); }
+.report-modal__reason input { accent-color: var(--danger); }
+
+.report-modal__detail {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+}
+.report-modal__detail:focus { border-color: var(--navy-500); }
+
+.report-modal__done {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--success);
+  font-weight: 600;
+  padding: 8px 0;
+}

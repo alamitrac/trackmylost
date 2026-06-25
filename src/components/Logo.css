@@ -1,0 +1,22 @@
+/* Official logo rendering. */
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+.logo-img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  user-select: none;
+}
+
+/* Responsive caps: the larger lockup scales down on small screens so it never
+   crowds the layout (width stays proportional since only height is fixed). */
+@media (max-width: 640px) {
+  .navbar .logo-img { height: 38px !important; }
+  .auth__brand-logo .logo-img { height: 46px !important; }
+}
+@media (max-width: 400px) {
+  .navbar .logo-img { height: 34px !important; }
+}
+
